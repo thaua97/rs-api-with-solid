@@ -1,4 +1,6 @@
 node_modules
 build
+.env
 
-prisma/generated
+/prisma/generated
+package-lock.json
