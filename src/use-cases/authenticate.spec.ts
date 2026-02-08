@@ -29,7 +29,7 @@ describe('Authenticate Use Case', () => {
     });
 
     it('should not authenticate a user with wrong email', async () => {
-        expect(() => sut.execute({
+        await expect(() => sut.execute({
             email: 'john.doe@example.com',
             password: 'password122',
         })).rejects.toBeInstanceOf(InvalidCredentialsError);
@@ -42,7 +42,7 @@ describe('Authenticate Use Case', () => {
             password_hash: await hash('password123', 6),
         });
 
-        expect(() => sut.execute({
+        await expect(() => sut.execute({
             email: 'john.doe@example.com',
             password: 'password122',
         })).rejects.toBeInstanceOf(InvalidCredentialsError);
