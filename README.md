@@ -6,7 +6,7 @@ Gym Way API
 - [x] Deve ser possivel se cadastrar;
 - [x] Deve ser possivel fazer login;
 - [x] Deve ser possivelobter o perfil de um usuario logado;
-- [ ] Deve ser possivel obter o numero de check-ins realizados pelo usuario;
+- [x] Deve ser possivel obter o numero de check-ins realizados pelo usuario;
 - [x] Deve ser possivel obter o historico de check-ins do usuario;
 - [x] Deve ser possivel realizar um check-in em uma academia;
 - [ ] Deve ser possivel validar um check-in de um usuario;
