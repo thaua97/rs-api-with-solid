@@ -9,10 +9,10 @@ Gym Way API
 - [x] Deve ser possivel obter o numero de check-ins realizados pelo usuario;
 - [x] Deve ser possivel obter o historico de check-ins do usuario;
 - [x] Deve ser possivel realizar um check-in em uma academia;
+- [x] Deve ser possivel obter o buscar a academia por nome;
+- [x] Deve ser possivel cadastrar uma academia;
 - [ ] Deve ser possivel validar um check-in de um usuario;
 - [ ] Deve ser possivel obter o buscar a academia mais proxima;
-- [ ] Deve ser possivel obter o buscar a academia por nome;
-- [x] Deve ser possivel cadastrar uma academia;
 
 ## RNs (Regras de Negócio)
 
