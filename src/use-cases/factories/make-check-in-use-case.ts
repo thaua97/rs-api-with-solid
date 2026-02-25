@@ -5,6 +5,7 @@ import { CheckInUseCase } from "../check-in";
 export function makeCheckInUseCase() {
   const checkInsRepository = new InMemoryCheckInsRepository();
   const gymsRepository = new InMemoryGymsRepository();
-  const checkInUseCase = new CheckInUseCase(checkInsRepository, gymsRepository);
-  return checkInUseCase;
+  const useCase = new CheckInUseCase(checkInsRepository, gymsRepository);
+
+  return useCase;
 }
