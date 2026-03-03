@@ -17,11 +17,12 @@ function generateDatabaseURL(schema: string) {
 
 export default <Environment>{
   name: "prisma",
-  transformMode: "ssr",
+  viteEnvironment: "ssr",
   async setup() {
     const schema = randomUUID();
     const url = generateDatabaseURL(schema);
 
+    console.log(url);
     process.env.DATABASE_URL = url;
 
     execSync("npx prisma db push");
