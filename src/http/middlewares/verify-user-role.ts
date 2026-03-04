@@ -2,7 +2,7 @@ import type { Role } from "#/prisma/generated/prisma/enums";
 import type { FastifyReply, FastifyRequest } from "fastify";
 
 export function verifyUserRole(roleVerify: Role) {
-  return (request: FastifyRequest, reply: FastifyReply) => {
+  return async (request: FastifyRequest, reply: FastifyReply) => {
     const { role } = request.user;
 
     if (role !== roleVerify) {

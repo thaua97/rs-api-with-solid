@@ -11,28 +11,16 @@ describe("Authentication (e2e)", () => {
   });
 
   it("should be able to authenticate", async () => {
-    const registerResponse = await request(app.server).post("/users").send({
+    await request(app.server).post("/users").send({
       name: "John Doe",
       email: "john.doe@example.com",
       password: "123456",
     });
 
-    if (registerResponse.statusCode !== 201) {
-      console.log(
-        "Register failed:",
-        registerResponse.statusCode,
-        registerResponse.body,
-      );
-    }
-
     const response = await request(app.server).post("/sessions").send({
       email: "john.doe@example.com",
       password: "123456",
     });
-
-    if (response.statusCode !== 200) {
-      console.log("Auth failed:", response.statusCode, response.body);
-    }
 
     expect(response.statusCode).toBe(200);
     expect(response.body).toEqual({

@@ -14,7 +14,7 @@ describe("Check-ins Metrics (e2e)", () => {
   });
 
   it("should be able to get a check-ins metrics", async () => {
-    const { token } = await makeAuthenticatedUserToTest(app);
+    const { token } = await makeAuthenticatedUserToTest(app, true);
 
     const user = await prisma.user.findFirstOrThrow();
 

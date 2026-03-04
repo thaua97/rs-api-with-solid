@@ -17,10 +17,6 @@ describe("Register (e2e)", () => {
       password: "123456",
     });
 
-    if (response.statusCode !== 201) {
-      console.log("Register failed:", response.statusCode, response.body);
-    }
-
     expect(response.statusCode).toBe(201);
   });
 });

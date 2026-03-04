@@ -23,8 +23,8 @@ describe("Fetch Nearby Gyms Use Case", () => {
 
   it("should be able to fetch nearby gyms", async () => {
     const { gyms } = await sut.execute({
-      userLatitude: -22.8123,
-      userLongitude: -43.2123,
+      latitude: -22.8123,
+      longitude: -43.2123,
     });
 
     await expect(gyms).toHaveLength(22);
@@ -40,8 +40,8 @@ describe("Fetch Nearby Gyms Use Case", () => {
     });
 
     const { gyms } = await sut.execute({
-      userLatitude: -24.8123,
-      userLongitude: -24.8123,
+      latitude: -24.8123,
+      longitude: -24.8123,
     });
 
     await expect(gyms).toHaveLength(1);
