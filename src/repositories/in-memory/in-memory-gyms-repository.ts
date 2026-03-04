@@ -20,12 +20,12 @@ export class InMemoryGymsRepository implements GymsRepository {
   }
 
   async findManyNearby({
-    userLatitude,
-    userLongitude,
+    latitude,
+    longitude,
   }: FindManyNearbyParams): Promise<Gym[]> {
     return this.items.filter((item) => {
       const distanceInMeters = getDistanceBetweenCoordinates(
-        { latitude: userLatitude, longitude: userLongitude },
+        { latitude, longitude },
         {
           latitude: item.latitude.toNumber(),
           longitude: item.longitude.toNumber(),
