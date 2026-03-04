@@ -2,7 +2,7 @@ import request from "supertest";
 import { app } from "@/app";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { makeAuthenticatedUserToTest } from "@/utils/tests/make-authenticated-user-to-test";
-import { makeGymsToTest } from "@/utils/tests/make-gyms-to-test";
+import { makeManyGymsToTest } from "@/utils/tests/make-gyms-to-test";
 
 describe("Nearby Gyms (e2e)", () => {
   beforeAll(async () => {
@@ -16,7 +16,7 @@ describe("Nearby Gyms (e2e)", () => {
   it("should be able list nearby gyms", async () => {
     const { token } = await makeAuthenticatedUserToTest(app);
 
-    await makeGymsToTest(app, token, 4);
+    await makeManyGymsToTest(app, token, 4);
 
     await request(app.server)
       .post("/gyms")
