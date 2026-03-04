@@ -1,6 +1,8 @@
+import { Role } from "#/prisma/generated/prisma/enums";
 import { compare } from "bcryptjs";
 import type { UserRepository } from "@/repositories/users-repository";
 import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
+import type { Prisma } from "prisma/generated/prisma/client";
 
 interface AuthenticateUseCaseRequest {
   email: string;
@@ -12,6 +14,7 @@ interface AuthenticateUseCaseResponse {
     id: string;
     email: string;
     name: string;
+    role: Role;
   };
 }
 
@@ -39,6 +42,7 @@ export class AuthenticateUseCase {
         id: user.id,
         email: user.email,
         name: user.name,
+        role: user.role,
       },
     };
   }
