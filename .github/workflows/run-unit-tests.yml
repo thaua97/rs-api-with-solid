@@ -18,6 +18,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Prisma Generate
-        run: npm run prisma:generate
+        run: npx prisma generate
       - name: Run Unit Tests
         run: npm run test
